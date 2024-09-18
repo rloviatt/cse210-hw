@@ -5,12 +5,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        // recieve grade percentage from user and setting of other variables // 
         Console.Write("Please enter your grade as a percentage (example: 98): ");
         string userGrade = Console.ReadLine();
         int gradePercent = int.Parse(userGrade);
         string letter = null;
         string sign = null;
 
+        // determine the letter grade //
         if (gradePercent >= 90)
         {
             letter = "A";
@@ -32,6 +34,7 @@ class Program
             letter = "F";   
         }
 
+        // Determine the sign, either + or - or null //
         if (gradePercent >= 93)
         {
             sign = null;
@@ -49,9 +52,10 @@ class Program
             sign = "-";
         }
         
-
+        // print grade //
         Console.WriteLine($"Your grade is: {letter}{sign}");
 
+        // determine pass or fail //
         if (gradePercent >= 70)
         {
             Console.WriteLine("Congratulations, you passed the class!");
