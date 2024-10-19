@@ -20,7 +20,6 @@ public class Journal
         foreach (var entry in _entries)
         {
             Console.WriteLine(entry);
-            Console.WriteLine("");
         }
     }
 
