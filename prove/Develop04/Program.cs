@@ -1,23 +1,49 @@
 using System;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        int i = 0;
-        
-        while (i < 5)
+        bool running = true;
+
+        while (running)
         {
-            Console.Write("+");
+            Console.Clear();
+            Console.WriteLine("Mindfulness Program");
+            Console.WriteLine("1. Start Breathing Activity");
+            Console.WriteLine("2. Start Reflecting Activity");
+            Console.WriteLine("3. Start Listing Activity");
+            Console.WriteLine("4. Quit");
+            Console.Write("Select an option: ");
+            string choice = Console.ReadLine();
 
-            Thread.Sleep(500);
+            switch (choice)
+            {
+                case "1":
+                    BreathingActivity breathingActivity = new BreathingActivity();
+                    breathingActivity.StartBreathingActivity();
+                    break;
+                case "2":
+                    ReflectionActivity reflectionActivity = new ReflectionActivity();
+                    reflectionActivity.StartReflectionActivity();
+                    break;
+                case "3":
+                    ListingActivity listingActivity = new ListingActivity();
+                    listingActivity.StartListingActivity();
+                    break;
+                case "4":
+                    running = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Please try again.");
+                    break;
+            }
 
-            Console.Write("\b \b"); // Erase the + character
-            Console.Write("-"); // Replace it with the - character
-            Thread.Sleep(500);
-            Console.Write("\b \b"); // Erase the - character
-
-            i+=1;
+            if (running)
+            {
+                Console.WriteLine("Press any key to return to the menu...");
+                Console.ReadKey();
+            }
         }
     }
 }
