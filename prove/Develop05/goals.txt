@@ -1,0 +1,4 @@
+200
+Goal:Talk in church,Speak in Sacrament meeting if asked,100,[X]
+EternalGoal:Read scriptures,Read the scriptures for at least 10 minutes,50,[ ]
+ChecklistGoal:Attend the temple,Attend the temple and perform ordinances,50,[ ],1,500,500
